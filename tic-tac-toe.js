@@ -11,20 +11,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         square.classList.add("square");
 
-        // Add X or O when a square is clicked
+        // Exercise 2: Add X or O when clicked
         square.addEventListener("click", function () {
 
             square.textContent = currentPlayer;
             square.classList.remove("X", "O");
             square.classList.add(currentPlayer);
 
-            // Switch to the next player
             if (currentPlayer === "X") {
                 currentPlayer = "O";
             } else {
                 currentPlayer = "X";
             }
 
+        });
+
+        // Exercise 3: Add hover effect
+        square.addEventListener("mouseover", function () {
+            square.classList.add("hover");
+        });
+
+        square.addEventListener("mouseout", function () {
+            square.classList.remove("hover");
         });
 
     });
